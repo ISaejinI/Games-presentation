@@ -8,7 +8,10 @@ const lenis = new Lenis({
     autoRaf: true,
     lerp: 0.05,
     duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    anchors: {
+        offset: 64
+    }
 })
 
 lenis.on('scroll', ScrollTrigger.update)
