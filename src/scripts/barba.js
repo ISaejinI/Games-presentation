@@ -6,10 +6,19 @@ barba.init({
         {
             name: 'clip-path-transition',
             once(data) {
+                gsap.set('body', { overflow: 'hidden', height: '100vh' });
+
                 const progressBar = document.querySelector('.preloader-progress');
                 const stella = document.querySelector('.stella-progress');
 
-                const tl = gsap.timeline();
+                const tl = gsap.timeline({
+                    delay: 0.5,
+                    ease: 'power4.inOut',
+                    stagger: 0.3,
+                    onComplete: () => {
+                        gsap.set('body', { overflow: 'auto', height: 'auto' });
+                    }
+                });
                 tl.to(progressBar, {
                     width: '100%',
                     duration: 3,
@@ -19,6 +28,12 @@ barba.init({
                     duration: 3,
                     ease: 'power4.inOut',
                 }, "<");
+
+                tl.to('.preloader', {
+                    yPercent: -100,
+                    duration: 1,
+                    ease: 'power4.inOut',
+                });
                 
 
                 return tl;
