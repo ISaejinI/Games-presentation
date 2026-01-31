@@ -28,6 +28,7 @@ const initHeroAnimations = () => {
         start: 'top top',
         end: `+=${viewportHeight}px`,
         pin: true,
+        pinSpacing: true,
         scrub: 1,
         onUpdate: (self) => {
             const progress = self.progress;
