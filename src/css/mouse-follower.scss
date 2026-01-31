@@ -1,0 +1,52 @@
+$mf-color-base: #7A4ACF !default;
+$mf-color-text: #FFFFFE !default;
+
+.mf-cursor {
+  $root: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 250;
+
+  direction: ltr;
+  contain: layout style size;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, color 0.3s ease, top 0.3s ease, left 0.3s ease;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    background: $mf-color-base;
+    border-radius: 50%;
+
+    transition: transform 0.25s ease-in-out, opacity 0.1s, width 0.25s ease-in-out, height 0.25s ease-in-out;
+  }
+
+  &.-pointer {
+    &:before {
+      width: 100px;
+      height: 100px;
+      content: "Voir la page";
+      color: $mf-color-text;
+      background-color: $mf-color-base;
+      top: -50px;
+      left: 5px;
+    }
+    cursor: unset;
+  }
+
+  &.-hidden {
+    &:before {
+      transform: scale(0);
+    }
+  }
+
+}
