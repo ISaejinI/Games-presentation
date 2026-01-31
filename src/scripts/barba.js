@@ -20,13 +20,13 @@ barba.init({
                 const tl = gsap.timeline();
                 tl.to(currentOverlay, {
                     clipPath: 'polygon(100% 75%, 100% 100%, 75% 100%, 0% 0%)',
-                    duration: 1,
+                    duration: 0.5,
                     ease: 'power4.inOut'
                 });
                 tl.to(currentOverlay, {
                     clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)',
                     duration: 1,
-                    ease: "power4.out",
+                    ease: "power4.inOut",
                     onComplete: () => {
                         currentContainer.remove();
                     }
