@@ -13,15 +13,20 @@ barba.init({
                 const currentOverlay = document.querySelector('.page-transition-overlay');
 
                 gsap.set(currentOverlay, {
-                    display: 'block', 
-                    clipPath: 'polygon(100% 100%, 100% 100%, 0% 100%, 0% 0%)'
+                    display: 'block',
+                    clipPath: 'polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%)', 
                 });
 
                 const tl = gsap.timeline();
                 tl.to(currentOverlay, {
-                    clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)', 
-                    duration: 1, 
-                    ease: 'power1.inOut',
+                    clipPath: 'polygon(100% 75%, 100% 100%, 75% 100%, 0% 0%)',
+                    duration: 1,
+                    ease: 'power4.inOut'
+                });
+                tl.to(currentOverlay, {
+                    clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)',
+                    duration: 1,
+                    ease: "power4.out",
                     onComplete: () => {
                         currentContainer.remove();
                     }
@@ -34,14 +39,14 @@ barba.init({
 
                 gsap.set(nextOverlay, {
                     display: 'block', 
-                    clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)'
+                    clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)',
                 });
 
                 const tl = gsap.timeline();
                 tl.to(nextOverlay, {
                     clipPath: 'polygon(100% 100%, 100% 100%, 100% 100%, 0% 0%)',
-                    duration: 1, 
-                    ease: 'power1.inOut',
+                    duration: 1,
+                    ease: 'power4.inOut',
                     onComplete: () => {
                         gsap.set(nextOverlay, { display: 'none' });
                     }
