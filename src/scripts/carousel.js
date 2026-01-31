@@ -190,6 +190,31 @@ function animateSlide(direction) {
     updateActiveTextSlide();
 }
 
+function updateActiveTextSlide() {
+    // Cacher tous les textes
+    carouselTextElements.forEach((element, index) => {
+        const words = element.querySelectorAll('.word');
+        if (index !== currentIndex) {
+            gsap.to(words, {
+                filter: 'blur(75px)',
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power2.out'
+            });
+        }
+    });
+
+    // Afficher le texte de la slide courante
+    const currentWords = carouselTextElements[currentIndex].querySelectorAll('.word');
+    gsap.to(currentWords, {
+        filter: 'blur(0px)',
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 0.3
+    });
+}
+
 function cleanupCarouselSlides() {
     const imgElements = carouselImages.querySelectorAll('.img');
     if (imgElements.length > 1) {
