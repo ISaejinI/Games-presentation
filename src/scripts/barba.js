@@ -6,7 +6,22 @@ barba.init({
         {
             name: 'clip-path-transition',
             once(data) {
-                // Animation for the initial page load
+                const progressBar = document.querySelector('.preloader-progress');
+                const stella = document.querySelector('.stella-progress');
+
+                const tl = gsap.timeline();
+                tl.to(progressBar, {
+                    width: '100%',
+                    duration: 3,
+                    ease: 'power4.inOut',
+                }).to(stella, {
+                    left: 'calc(100% - 65px)',
+                    duration: 3,
+                    ease: 'power4.inOut',
+                }, "<");
+                
+
+                return tl;
             },
             leave(data) {
                 const currentContainer = data.current.container;

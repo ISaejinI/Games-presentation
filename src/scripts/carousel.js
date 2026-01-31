@@ -191,7 +191,6 @@ function animateSlide(direction) {
 }
 
 function updateActiveTextSlide() {
-    // Cacher tous les textes
     carouselTextElements.forEach((element, index) => {
         const words = element.querySelectorAll('.word');
         if (index !== currentIndex) {
@@ -204,7 +203,6 @@ function updateActiveTextSlide() {
         }
     });
 
-    // Afficher le texte de la slide courante
     const currentWords = carouselTextElements[currentIndex].querySelectorAll('.word');
     gsap.to(currentWords, {
         filter: 'blur(0px)',

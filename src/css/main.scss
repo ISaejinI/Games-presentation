@@ -282,6 +282,7 @@ a {
     }
 }
 
+
 // ---------------------------- FILLER IMAGE ---------------------------- //
 .filler-image {
     margin-bottom: vw(256);
@@ -305,6 +306,59 @@ a {
                 object-fit: cover;
                 object-position: center center;
             }
+        }
+    }
+}
+
+
+// ---------------------------- FILLER IMAGE ---------------------------- //
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $midnight;
+    // display: none;
+
+    .preloader-bar {
+        height: vw(24);
+        width: vw(800);
+        background-color: $midnight-light;
+        border-radius: 4px;
+        margin-bottom: vw(128);
+
+        .preloader-progress {
+            height: 100%;
+            width: 0%;
+            background-color: $purple;
+            border-radius: 4px;
+        }
+    }
+
+    .stella-bar {
+        height: vw(65);
+        width: vw(800);
+        margin-bottom: vw(8);
+        position: relative;
+
+        .stella-progress {
+            position: absolute;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .stella-progress video {
+            height: 65px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: top center;
         }
     }
 }
