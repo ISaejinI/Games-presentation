@@ -40,8 +40,36 @@
 
             <section class="carousel-section">
                 <div class="carousel">
+                    <div class="carousel-images">
 
+                    </div>
                 </div>
+
+                <div class="slider-controls">
+                    <button control-btn prev-btn>
+                        <img src="/img/arrow-left.svg" alt="">
+                    </button>
+                    <button control-btn next-btn>
+                        <img src="/img/arrow-right.svg" alt="">
+                    </button>
+                </div>
+
+                <svg
+                    viewBox="0 0 0 0"
+                    aria-hidden="true"
+                    style="position: absolute; z-index: -1; opacity: 0;"
+                >
+                    <defs>
+                        <filter id="blur-matrix">
+                            <feColorMatrix
+                                in="SourceGraphic"
+                                type="matrix"
+                                values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 255 -140"
+                            ></feColorMatrix>
+                        </filter>
+                    </defs>
+                </svg>
+                
             </section>
             <div class="page-transition-overlay"></div>
         </main>
