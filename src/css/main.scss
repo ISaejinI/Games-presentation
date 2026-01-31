@@ -16,6 +16,11 @@
     src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
     font-weight: 500;
 }
+@font-face {
+    font-family: 'PPNeueMontreal';
+    src: url('/fonts/PPNeueMontreal-Bold.otf') format('opentype');
+    font-weight: 700;
+}
 
 
 // --------------------------- VARIABLES --------------------------- //
@@ -87,6 +92,7 @@ a {
     background-color: $purple;
     z-index: 9999;
     display: none;
+    will-change: clip-path;
 }
 
 // ---------------------------- HERO ---------------------------- //
@@ -167,3 +173,98 @@ a {
 
 
 // ---------------------------- CAROUSEL ---------------------------- //
+.carousel-section {
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        will-change: transform;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: vw(64);
+        font-weight: 700;
+        letter-spacing: -0.3rem;
+        line-height: 0.85;
+    }
+
+    .carousel {
+        position: relative;
+        width: vw(1792);
+        height: vw(950);
+        overflow: hidden;
+    }
+
+    .carousel-images, .carousel-images .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-images .img {
+        will-change: clip-path;
+    }
+
+    .carousel-images {
+        opacity: 0.85;
+    }
+
+    .slide-title-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+
+        .title {
+            position: relative;
+            text-align: center;
+            filter: url(#blur-matrix) blur(0.25px);
+            -webkit-filter: url(#blur-matrix) blur(0.25px);
+            z-index: 2;
+
+            .word {
+                filter: blur(75px);
+                -webkit-filter: blur(75px);
+                will-change: filter, opacity;
+                opacity: 0;
+            }
+        }
+    }
+
+    .slider-controls {
+        position: absolute;
+        width: vw(1792);
+        top: 50%;
+        transform: translateY(-50%);
+        padding: vw(64);
+        display: flex;
+        justify-content: space-between;
+        z-index: 10;
+
+        .control-btn {
+            padding: vw(16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $midnight-light;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $purple;
+            }
+        }
+    }
+}
