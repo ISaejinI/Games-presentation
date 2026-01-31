@@ -41,6 +41,7 @@ $size-text: vw(18);
     font-size: $size-title;
     font-weight: 500;
     text-transform: uppercase;
+    margin: 0;
 }
 .anchor {
     font-size: $size-anchor;
@@ -175,6 +176,17 @@ a {
 // ---------------------------- CAROUSEL ---------------------------- //
 .carousel-section {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: vw(48);
+    padding: vw(64);
+
+    h1 {
+        width: 100%;
+    }
+
+
     img {
         width: 100%;
         height: 100%;
@@ -195,6 +207,7 @@ a {
         width: vw(1792);
         height: vw(950);
         overflow: hidden;
+        border-radius: 14px;
     }
 
     .carousel-images, .carousel-images .img {
@@ -243,10 +256,10 @@ a {
 
     .slider-controls {
         position: absolute;
-        width: vw(1792);
+        width: vw(1792-128);
         top: 50%;
         transform: translateY(-50%);
-        padding: vw(64);
+        padding: vw(128);
         display: flex;
         justify-content: space-between;
         z-index: 10;
