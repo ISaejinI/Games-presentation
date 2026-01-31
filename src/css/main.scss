@@ -323,7 +323,7 @@ a {
     justify-content: space-between;
     align-items: center;
     background-color: $midnight;
-    z-index: 10000;
+    z-index: 100;
 
     .preloader-bar {
         height: vw(24);
