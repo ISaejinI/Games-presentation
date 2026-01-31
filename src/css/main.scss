@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+// @import url('/public/fonts/PPNeueMontreal-Book.otf');
+
+// Adaptation de la taille des éléments pour les différentes tailles d'écrans
+@function vw($px, $base: 1440) {
+    @return ($px / $base) * 100vw;
+}
+
+body {
+    margin: 0;
+}
+
+.body-container {
+    background-color: chocolate;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-transition-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: chartreuse;
+    z-index: 10;
+    display: none;
+}
+
+a {
+    z-index: 20;
+}
