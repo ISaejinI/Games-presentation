@@ -324,6 +324,7 @@ a {
     align-items: center;
     background-color: $midnight;
     z-index: 100;
+    display: none;
 
     .preloader-bar {
         height: vw(24);

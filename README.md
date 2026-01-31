@@ -36,7 +36,7 @@ Ces références servent de base esthétique, adaptées au contexte et aux contr
 
 ### Animations & interactions
 
-- [ ] **Preloader**
+- [x] **Preloader**
 - [x] **Transition de page**  
   Inspirée du site Awwwards :  
   https://iventions.com/

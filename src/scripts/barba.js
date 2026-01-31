@@ -6,6 +6,7 @@ barba.init({
         {
             name: 'clip-path-transition',
             once(data) {
+                gsap.set('.preloader', { display: 'flex' });
                 gsap.set('body', { overflow: 'hidden', height: '100vh' });
 
                 const progressBar = document.querySelector('.preloader-progress');
