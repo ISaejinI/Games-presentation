@@ -49,7 +49,7 @@ const initHeroAnimations = () => {
             });
 
             flip.progress(progress);
-        },
+        }
     })
 };
 
