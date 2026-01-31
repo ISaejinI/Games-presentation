@@ -1,20 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-// @import url('/public/fonts/PPNeueMontreal-Book.otf');
-
-// Adaptation de la taille des éléments pour les différentes tailles d'écrans
-@function vw($px, $base: 1440) {
-    @return ($px / $base) * 100vw;
+// ---------------------------- FUNCTIONS ---------------------------- //
+@function vw($px) {
+    @return ($px / 1920) * 100vw;
 }
 
+
+// ---------------------------- IMPORTS ---------------------------- //
+@font-face {
+    font-family: 'PPNeueMontreal';
+    src: url('/public/fonts/PPNeueMontreal-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PPNeueMontreal';
+    src: url('/public/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+
+// --------------------------- VARIABLES --------------------------- //
+$midnight: #141726;
+$midnight-light: #29294F;
+$purple: #7A4ACF;
+$white: #FFFFFE;
+$white-opacity: #FFFFFE0A;
+
+$size-title: vw(64);
+$size-subtitle: vw(32);
+$size-anchor: vw(24);
+$size-text: vw(18);
+
+
+// ---------------------- READY TO USE CLASSES ---------------------- //
+.title {
+    font-size: $size-title;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.subtitle {
+    font-size: $size-subtitle;
+}
+
+
+// ------------------------- GLOBAL STYLES ------------------------- //
 body {
     margin: 0;
+    color: $white;
+    font-family: 'PPNeueMontreal', sans-serif;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+        color: $purple;
+    }
 }
 
 .body-container {
-    background-color: chocolate;
+    background-color: $midnight;
     height: 100vh;
-    font-family: 'Inter', sans-serif;
 }
 
 .page-transition-overlay {
@@ -23,11 +68,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: chartreuse;
-    z-index: 10;
+    background-color: $purple;
+    z-index: 9999;
     display: none;
-}
-
-a {
-    z-index: 20;
 }
