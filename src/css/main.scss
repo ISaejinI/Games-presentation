@@ -36,8 +36,22 @@ $size-text: vw(18);
     font-weight: 500;
     text-transform: uppercase;
 }
+.anchor {
+    font-size: $size-anchor;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+        color: $purple;
+    }
+}
 .subtitle {
     font-size: $size-subtitle;
+}
+.text {
+    font-size: $size-text;
 }
 
 
