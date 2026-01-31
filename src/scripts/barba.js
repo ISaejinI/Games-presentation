@@ -34,8 +34,10 @@ barba.init({
                     duration: 1,
                     ease: 'power4.inOut',
                 });
+                tl.to('.preloader', {
+                    display: 'none',
+                });
                 
-
                 return tl;
             },
             leave(data) {
@@ -66,13 +68,19 @@ barba.init({
             enter(data) {
                 const nextContainer = data.next.container;
                 const nextOverlay = document.querySelector('.page-transition-overlay');
+                
+                gsap.set('body', { overflow: 'hidden', height: '100vh' });
 
                 gsap.set(nextOverlay, {
                     display: 'block', 
                     clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)',
                 });
 
-                const tl = gsap.timeline();
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        gsap.set('body', { overflow: 'auto', height: 'auto' });
+                    }
+                });
                 tl.to(nextOverlay, {
                     clipPath: 'polygon(100% 100%, 100% 100%, 100% 100%, 0% 0%)',
                     duration: 1,
