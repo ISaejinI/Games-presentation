@@ -134,6 +134,7 @@ a {
         width: 50%;
         display: flex;
         justify-content: space-between;
+        height: min-content;
 
         &:nth-child(1) {
             padding: vw(32) vw(64) vw(32) vw(32);

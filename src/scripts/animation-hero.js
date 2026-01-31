@@ -27,6 +27,7 @@ const initHeroAnimations = () => {
         trigger: '.navbar-backdrop',
         start: 'top top',
         end: `+=${viewportHeight}px`,
+        pin: true,
         scrub: 1,
         onUpdate: (self) => {
             const progress = self.progress;
