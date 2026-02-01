@@ -444,7 +444,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: vw(48);
-    padding-bottom: vw(128);
+    padding-bottom: vw(16);
+    margin-bottom: vw(112);
 
     h1 {
         margin: 0 vw(64);
