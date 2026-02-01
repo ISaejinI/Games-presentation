@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewportHeight = window.innerHeight;
 
     gsap.set(imageFeature, { yPercent: -100, });
-    gsap.set(textFeature, { opacity: 0, });
+    gsap.set(textFeature, { opacity: 0.1, });
 
 
     ScrollTrigger.create({
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     gsap.set(textFeature[index], { opacity: elementProgress });
                 } else {
                     gsap.set(img, { yPercent: -100 });
-                    gsap.set(textFeature[index], { opacity: 0 });
+                    gsap.set(textFeature[index], { opacity: 0.1 });
                 }
             });
 
