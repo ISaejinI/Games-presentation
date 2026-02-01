@@ -69,6 +69,7 @@ Ces références servent de base esthétique, adaptées au contexte et aux contr
 
 ```bash
 npm install
+```
 
 ### 2. Lancer le serveur de développement
 
