@@ -499,4 +499,17 @@ a {
             }
         }
     }
-}    
+}
+
+// ---------------------------- INTRO ---------------------------- //
+.intro {
+    padding: 0 vw(64);
+    margin-bottom: vw(256);
+    display: flex;
+    justify-content: center;
+
+    p {
+        width: vw(900);
+        text-align: center;
+    }
+}
