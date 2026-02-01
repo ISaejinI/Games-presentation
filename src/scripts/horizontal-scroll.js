@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ScrollTrigger.create({
         trigger: '.characters',
-        start: 'top top',
+        start: 'bottom bottom',
         end: `+=${viewportHeight * (cards.length - 1)}px`,
         pin: true,
         pinSpacing: true,
