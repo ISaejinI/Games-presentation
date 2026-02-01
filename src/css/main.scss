@@ -454,7 +454,6 @@ a {
     .characters-container {
         display: flex;
         width: 100vw;
-        overflow: hidden;
 
         .character-card {
             display: flex;
@@ -473,7 +472,6 @@ a {
                 width: vw(580);
                 height: vw(820);
                 border-radius: 14px;
-                overflow: hidden;
                 position: relative;
 
                 img {

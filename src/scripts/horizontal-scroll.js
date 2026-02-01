@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         onUpdate: (self) => {
             const progress = self.progress;
             
-            // Calcul pour aller de x:0 à x:-100% + une carte visible
             const totalScrollPercent = (cards.length - 1) * 100;
 
             gsap.set(cardsContainer, {
