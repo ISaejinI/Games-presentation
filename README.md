@@ -44,7 +44,7 @@ Ces références servent de base esthétique, adaptées au contexte et aux contr
 - [x] **Animations au scroll**   
   Inspirées du site :  (refaite à l'aide du tuto de CodeGrid) 
   https://www.nakedcityfilms.com/
-- [ ] **Section pin**
+- [x] **Section pin**
 - [ ] **Scroll horizontal**
 - [x] **Carousel**  
   Inspiré du site :  (refaite à l'aide du tuto de CodeGrid)  
