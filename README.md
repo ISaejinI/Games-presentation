@@ -40,12 +40,12 @@ Ces références servent de base esthétique, adaptées au contexte et aux contr
 - [x] **Transition de page**  
   Inspirée du site Awwwards :  
   https://iventions.com/
-- [ ] **Text reveal**
+- [x] **Text reveal**
 - [x] **Animations au scroll**   
   Inspirées du site :  (refaite à l'aide du tuto de CodeGrid) 
   https://www.nakedcityfilms.com/
 - [x] **Section pin**
-- [ ] **Scroll horizontal**
+- [x] **Scroll horizontal**
 - [x] **Carousel**  
   Inspiré du site :  (refaite à l'aide du tuto de CodeGrid)  
   https://www.lacrapulestudio.com/
