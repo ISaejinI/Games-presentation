@@ -5,3 +5,4 @@ import './scripts/mouse-follower.js';
 import './scripts/animation-hero.js';
 import './scripts/carousel.js';
 import './scripts/filler-image.js';
+import './scripts/pin-animation.js';

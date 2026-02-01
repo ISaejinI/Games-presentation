@@ -424,6 +424,7 @@ a {
     .feature-image-container {
         position: relative;
         width: 60%;
+        max-width: 900px;
         aspect-ratio: 1/1;
         border-radius: 14px;
         overflow: hidden;

@@ -4,5 +4,42 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    const imageFeature = document.querySelectorAll('.feat-img');
+    const textFeature = document.querySelectorAll('.feat');
+    const viewportHeight = window.innerHeight;
+
+    gsap.set(imageFeature, { yPercent: -100, });
+    gsap.set(textFeature, { opacity: 0, });
+
+
+    ScrollTrigger.create({
+        trigger: '.game-feature',
+        start: 'bottom bottom',
+        end: `+=${viewportHeight*(imageFeature.length/2)}px`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        onUpdate: (self) => {
+            const progress = self.progress;
+            const totalElements = imageFeature.length;
+
+            const currentElementIndex = Math.floor(progress * totalElements);
+            const elementProgress = (progress * totalElements) % 1;
+
+            imageFeature.forEach((img, index) => {
+                if (index < currentElementIndex) {
+                    gsap.set(img, { yPercent: 0 });
+                    gsap.set(textFeature[index], { opacity: 1 });
+                } else if (index === currentElementIndex) {
+                    gsap.set(img, { yPercent: -100 - (elementProgress * -100) });
+                    gsap.set(textFeature[index], { opacity: elementProgress });
+                } else {
+                    gsap.set(img, { yPercent: -100 });
+                    gsap.set(textFeature[index], { opacity: 0 });
+                }
+            });
+
+        }
+    })
 });
