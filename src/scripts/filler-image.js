@@ -1,34 +1,50 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+export default class FillerImage {
+    constructor() {
+        this.init();
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const fillerImage = document.querySelector('.filler-image .image');
-    const picture = fillerImage.querySelector("picture");
-    const img = fillerImage.querySelector("img");
+    init() {
+        gsap.registerPlugin(ScrollTrigger);
+        this.fillerImageAnimation();
+    }
 
-    gsap.set(picture, {
-        scale: 0.6,
-    });
-    gsap.set(img, {
-        scale: 2,
-    });
+    fillerImageAnimation() {
+        const fillerImage = document.querySelector('.filler-image .image');
+        const picture = fillerImage.querySelector("picture");
+        const img = fillerImage.querySelector("img");
 
-    const tlFillerImage = gsap.timeline({
-        scrollTrigger: {
-            trigger: fillerImage,
-            start: "top bottom",
-            end: "center 40%",
-            scrub: true
-      },
-    });
+        gsap.set(picture, {
+            scale: 0.6,
+        });
+        gsap.set(img, {
+            scale: 2,
+        });
 
-    tlFillerImage.to(img, {
-        scale: 1,
-        ease: "power4.out",
-    }).to(picture, {
-        scale: 1,
-        ease: "power4.out",
-    },"<");
-});
+        const tlFillerImage = gsap.timeline({
+            scrollTrigger: {
+                trigger: fillerImage,
+                start: "top bottom",
+                end: "center 40%",
+                scrub: true
+            },
+        });
+
+        tlFillerImage.to(img, {
+            scale: 1,
+            ease: "power4.out",
+        }).to(picture, {
+            scale: 1,
+            ease: "power4.out",
+        }, "<");
+    }
+}
+
+
+
+
+
+
+

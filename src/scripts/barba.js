@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import barba from '@barba/core';
+import App from '../main.js';
 
 barba.init({
     transitions : [
@@ -78,6 +79,9 @@ barba.init({
                 });
 
                 const tl = gsap.timeline({
+                    onStart: () => {
+                        new App();
+                    },
                     onComplete: () => {
                         gsap.set('body', { overflow: 'auto', height: 'auto' });
                     }
